@@ -1,0 +1,26 @@
+<head>
+  <title>trec</title>
+</head>
+
+<body>
+  <h1>trec</h1>
+  <p>the <b>T</b>est<b>RE</b>sult<b>C</b>ollector</p>
+
+    <p>
+    <h3>new testcase</h3>
+    <form class="new-testresult">
+        <input type="text" name="name" placeholder="testname" /><br/>
+        <input type="checkbox" name="result" /> successful<br/>
+        <button type="submit">Submit new testresult</button>
+    </form>
+    </p>
+  <ul>
+  {{#each testresults}}
+    {{>test}}
+  {{/each}}
+  </ul>
+</body>
+
+<template name="test">
+  <li><b>{{name}}</b> - {{#if result}}GOOD{{else}}BAD{{/if}} - {{time}} </li>
+</template>
